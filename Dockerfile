@@ -37,7 +37,7 @@ RUN apt-get -y install nodejs
 RUN npm install -g npm@2.4.1
 
 # install compass, sass
-RUN apt-get install ruby
+RUN apt-get -y install ruby
 RUN gem install compass
 RUN gem install sass
 
