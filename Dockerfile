@@ -37,9 +37,9 @@ RUN apt-get -y install nodejs
 RUN npm install -g npm@2.4.1
 
 # install compass, sass
-RUN apt-get -y install ruby
-RUN gem install compass
-RUN gem install sass
+#RUN apt-get -y install ruby
+#RUN gem install compass
+#RUN gem install sass
 
 # install yeoman
 RUN npm install -g yo bower grunt-cli gulp
