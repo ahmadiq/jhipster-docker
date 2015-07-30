@@ -29,12 +29,11 @@ RUN apt-get -y install vim nano git sudo zip bzip2 fontconfig curl
 RUN apt-get -y install maven
 
 # install node.js from PPA
-RUN add-apt-repository ppa:chris-lea/node.js
-RUN apt-get update
-RUN apt-get -y install nodejs
+RUN curl --silent --location https://deb.nodesource.com/setup_0.12 | sudo bash -
+RUN apt-get install --yes nodejs
 
 # upgrade to the latest version of npm
-RUN npm install -g npm@2.4.1
+RUN npm install -g npm@2.13.2
 
 # install compass, sass
 #RUN apt-get -y install ruby
@@ -45,7 +44,7 @@ RUN npm install -g npm@2.4.1
 RUN npm install -g yo bower grunt-cli gulp
 
 # install JHipster
-RUN npm install -g generator-jhipster@2.1.0
+RUN npm install -g generator-jhipster@2.18.0
 
 # configure the "jhipster" and "root" users
 RUN echo 'root:jhipster' |chpasswd
